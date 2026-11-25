@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Ananya Subramanian Show — Conversations across world sports</title>
+  <meta name="description" content="An interview-only sports podcast hosted by Ananya Subramanian: long-form, forty-minute sit-down conversations with players, coaches, rising talent, creators and owners across world sports.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="canonical" href="https://theananyasubramanianshow.com/">
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Ananya Subramanian Show">
+  <meta property="og:title" content="The Ananya Subramanian Show — Conversations across world sports">
+  <meta property="og:description" content="Long-form, sit-down interviews with players, coaches, rising talent, creators and owners across world sports.">
+  <meta property="og:url" content="https://theananyasubramanianshow.com/">
+  <meta property="og:image" content="https://theananyasubramanianshow.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Ananya Subramanian Show logo with the tagline Conversations across world sports">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Ananya Subramanian Show">
+  <meta name="twitter:description" content="Conversations across world sports. Interviews only.">
+  <meta name="twitter:image" content="https://theananyasubramanianshow.com/assets/og-image.png">
+
+  <!-- Favicons (made from the logo mark) -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="alternate" type="application/rss+xml" title="The Ananya Subramanian Show" href="/feed">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- 1. HUD -->
+  <div class="hud" aria-label="Studio status">
+    <div class="hud__left">
+      <span class="rec-dot" aria-hidden="true"></span>
+      <span class="hud__rec">REC</span>
+      <span class="hud__tc" id="timecode" aria-hidden="true">00:00:00:00</span>
+    </div>
+    <div class="hud__mid" id="scramble" aria-label="The Ananya Subramanian Show">THE ANANYA SUBRAMANIAN SHOW</div>
+    <div class="hud__right">
+      <span>Austin, TX</span><span class="hud__sep" aria-hidden="true">·</span><time id="clock" aria-label="Local time in Austin">--:--:--</time>
+    </div>
+  </div>
+
+  <!-- 2. Header -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="The Ananya Subramanian Show — back to top">
+      <img class="brand__mark" src="assets/logo-mark.png" alt="" width="40" height="40">
+      <span class="brand__name">The Ananya Subramanian Show</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#episodes">Episodes</a>
+      <a href="#about">About</a>
+      <a href="#host">Host</a>
+    </nav>
+    <a class="pill pill--light" href="#guest">Be a guest</a>
+  </header>
+
+  <main id="main">
+    <!-- 3. Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <p class="eyebrow reveal">Interviews <span aria-hidden="true">::</span> Players <span aria-hidden="true">::</span> Coaches <span aria-hidden="true">::</span> Rising talent <span aria-hidden="true">::</span> Creators</p>
+      <h1 class="hero__title" id="hero-title" aria-label="Conversations across world sports">
+        <span class="line" data-split>Conversations</span>
+        <span class="line" data-split>Across World <span class="accent">Sports</span></span>
+      </h1>
+      <p class="hero__sub reveal">
+        Forty minutes, sitting down with
+        <span class="rotator" aria-live="off">
+          <span class="rotator__list" id="rotator">
+            <span>the players.</span>
+            <span>the coaches.</span>
+            <span>rising talent.</span>
+            <span>the creators.</span>
+            <span>the owners.</span>
+          </span>
+        </span>
+      </p>
+      <div class="hero__cta reveal">
+        <button class="pill pill--accent" type="button" id="watch-latest">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+          Watch the latest
+        </button>
+        <a class="pill pill--outline" href="#subscribe">Subscribe</a>
+      </div>
+    </section>
+
+    <!-- 4. Filmstrip — artwork from the latest interviews (never the host photo) -->
+    <section class="filmstrip" aria-label="Artwork from the latest interviews">
+      <div class="filmstrip__viewport">
+        <div class="filmstrip__track" id="filmstrip"></div>
+      </div>
+      <p class="countdown" aria-hidden="true">3 . . 2 . . 1 . . 0 . . 1 . . 2 . . 3</p>
+    </section>
+
+    <!-- 5. About -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="section__label reveal"><span>(01)</span> About the show</div>
+      <div class="about__top">
+        <h2 class="display about__title reveal" id="about-title">We center the athlete, <em class="serif accent-text">not the soundbite.</em></h2>
+        <p class="about__lede reveal">The Ananya Subramanian Show is an interview-only podcast. Every episode is a long-form sit-down of around forty minutes, recorded virtually, with the players, coaches, rising talent, creators and owners who make world sport what it is. No hot takes and no highlight reels: just the person, in their own words.</p>
+      </div>
+      <ol class="pillars">
+        <li class="pillar reveal">
+          <span class="pillar__num">01</span>
+          <h3 class="pillar__title">The sit-down</h3>
+          <p>One guest, about forty minutes, no rush. Room for the questions a press conference never gets to.</p>
+        </li>
+        <li class="pillar reveal">
+          <span class="pillar__num">02</span>
+          <h3 class="pillar__title">World sports</h3>
+          <p>It started in cricket as Yorker. Now it's every sport: the pitch, the court, the track and anywhere else a story is waiting.</p>
+        </li>
+        <li class="pillar reveal">
+          <span class="pillar__num">03</span>
+          <h3 class="pillar__title">The whole game</h3>
+          <p>The early mornings, the setbacks, the second chances and the people behind them. The whole career, not just the result.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 6. Statement (text only) -->
+    <section class="statement" aria-label="Statement">
+      <p class="statement__text" id="statement">Conversations that go past <span class="accent">the scoreline</span> into the person.</p>
+    </section>
+
+    <!-- 7. Latest interviews -->
+    <section class="section episodes" id="episodes" aria-labelledby="episodes-title">
+      <div class="section__label reveal"><span>(02)</span> Latest interviews</div>
+      <h2 class="display episodes__title reveal" id="episodes-title">Stories you'll <em class="serif accent-text">love</em></h2>
+      <p class="feed-status" id="feed-status" role="status"></p>
+
+      <div id="featured"></div>
+      <div class="grid grid--next" id="next-grid"></div>
+
+      <div class="all" id="all-episodes">
+        <div class="all__head">
+          <h3 class="display all__title reveal">All episodes</h3>
+          <div class="all__controls">
+            <div class="filters" id="filters" role="group" aria-label="Filter by sport"></div>
+            <div class="search">
+              <label for="search">Search interviews</label>
+              <input id="search" type="search" placeholder="Search by guest, team, topic…" autocomplete="off">
+            </div>
+          </div>
+        </div>
+        <p class="all__count" id="all-count" aria-live="polite"></p>
+        <div class="grid" id="all-grid"></div>
+        <div class="all__more">
+          <button class="pill pill--outline" type="button" id="load-more" hidden>Load more</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Marquee -->
+    <section class="marquee" aria-label="Sit-down interviews, world sports">
+      <div class="marquee__row marquee__row--outline" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Sit-down interviews ● World sports ● Sit-down interviews ● World sports ●&nbsp;</span>
+          <span>Sit-down interviews ● World sports ● Sit-down interviews ● World sports ●&nbsp;</span>
+        </div>
+      </div>
+      <div class="marquee__row marquee__row--solid" aria-hidden="true">
+        <div class="marquee__track marquee__track--reverse">
+          <span>Sit-down interviews ● World sports ● Sit-down interviews ● World sports ●&nbsp;</span>
+          <span>Sit-down interviews ● World sports ● Sit-down interviews ● World sports ●&nbsp;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Host (the only place the host photo appears) -->
+    <section class="section host" id="host" aria-labelledby="host-title">
+      <div class="section__label reveal"><span>(03)</span> Your host</div>
+      <div class="host__grid">
+        <figure class="host__photo reveal">
+          <div class="frame">
+            <img src="assets/ananya.jpg" alt="Ananya Subramanian, smiling, seated on a lawn in an orange and gold half-saree" width="1200" height="1500" loading="lazy" decoding="async">
+          </div>
+          <span class="corner corner--tl" aria-hidden="true"></span>
+          <span class="corner corner--tr" aria-hidden="true"></span>
+          <span class="corner corner--bl" aria-hidden="true"></span>
+          <span class="corner corner--br" aria-hidden="true"></span>
+        </figure>
+        <div class="host__copy">
+          <h2 class="display host__name reveal" id="host-title">Ananya Subramanian</h2>
+          <p class="host__lines reveal">
+            <span>Started in cricket.</span>
+            <span>Grew into every sport.</span>
+            <span class="accent-text">Interviews only.</span>
+          </p>
+          <p class="host__bio reveal">Ananya Subramanian hosts The Ananya Subramanian Show from Austin, Texas. The show began in cricket as Yorker and has grown into long-form, interview-only conversations across world sports. Each one is a virtual sit-down with someone who lives the game, and a chance to hear how they got there.</p>
+          <div class="pill-row reveal">
+            <a class="pill pill--outline" href="https://www.linkedin.com/in/ananya-subramanian-3b38621aa/" target="_blank" rel="noopener" data-link="linkedin">LinkedIn</a>
+            <a class="pill pill--outline" href="#" target="_blank" rel="noopener" data-link="youtube">YouTube</a>
+            <a class="pill pill--outline" href="#" target="_blank" rel="noopener" data-link="instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Be a guest -->
+    <section class="guest" id="guest" aria-labelledby="guest-title">
+      <div class="guest__inner">
+        <p class="guest__eyebrow reveal"><span>(04)</span> Creating the conversation together</p>
+        <h2 class="guest__title reveal" id="guest-title">Be a guest</h2>
+        <p class="guest__line reveal">Players, coaches, owners and creators with a story worth forty minutes — let's talk.</p>
+        <a class="pill pill--dark reveal" href="mailto:ananya.a.subramanian@gmail.com?subject=Guest%20enquiry%20%E2%80%94%20The%20Ananya%20Subramanian%20Show">
+          Drop us a line
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- 11. Subscribe -->
+    <section class="section subscribe" id="subscribe" aria-labelledby="subscribe-title">
+      <div class="section__label reveal"><span>(05)</span> Subscribe</div>
+      <h2 class="display subscribe__title reveal" id="subscribe-title">Never miss <br>an <span class="accent-text">interview</span></h2>
+      <div class="pill-row reveal">
+        <a class="pill pill--outline" href="#" target="_blank" rel="noopener" data-link="spotify">Spotify</a>
+        <a class="pill pill--outline" href="#" target="_blank" rel="noopener" data-link="apple">Apple Podcasts</a>
+        <a class="pill pill--outline" href="#" target="_blank" rel="noopener" data-link="youtube">YouTube</a>
+        <a class="pill pill--outline" href="#" target="_blank" rel="noopener" data-link="rss">RSS</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. Footer -->
+  <footer class="site-footer">
+    <div class="footer__brand">
+      <img src="assets/logo-mark.png" alt="" width="44" height="44">
+      <p>© <span id="year">2026</span> The Ananya Subramanian Show</p>
+    </div>
+    <nav class="footer__links" aria-label="Listen and follow">
+      <a href="#" target="_blank" rel="noopener" data-link="spotify">Spotify</a>
+      <a href="#" target="_blank" rel="noopener" data-link="apple">Apple Podcasts</a>
+      <a href="#" target="_blank" rel="noopener" data-link="youtube">YouTube</a>
+      <a href="#" target="_blank" rel="noopener" data-link="instagram">Instagram</a>
+      <a href="https://www.linkedin.com/in/ananya-subramanian-3b38621aa/" target="_blank" rel="noopener" data-link="linkedin">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener" data-link="rss">RSS</a>
+    </nav>
+  </footer>
+
+  <!-- Sticky audio player (hidden until an episode plays) -->
+  <div class="player" id="player" role="region" aria-label="Audio player" hidden>
+    <img class="player__art" id="player-art" src="assets/logo-mark.png" alt="" width="56" height="56">
+    <button class="player__btn" type="button" id="player-toggle" aria-label="Pause">
+      <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+      <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/></svg>
+    </button>
+    <div class="player__body">
+      <p class="player__title" id="player-title">—</p>
+      <div class="player__seekrow">
+        <label class="sr-only" for="player-seek">Seek</label>
+        <input class="player__seek" id="player-seek" type="range" min="0" max="100" step="0.1" value="0">
+        <span class="player__time" id="player-time">0:00 / 0:00</span>
+      </div>
+    </div>
+    <button class="player__close" type="button" id="player-close" aria-label="Close player">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+    <audio id="audio" preload="none"></audio>
+  </div>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
